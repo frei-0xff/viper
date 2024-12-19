@@ -1,5 +1,15 @@
 #include "viper.h"
 
+struct  crack_input lsf_out;
+struct  tm start_time, last_time;		// time structs
+char    checkpass[17];				// cleartext passphrase
+char    message[8][81];				// result message
+char    time_done[17];				// passed time
+char    time_togo[17];				// calculated time to run
+time_t  read_time;				// actual time
+FILE *  fp_pf;					// progressfile
+int     ret;                                    // function return codes
+
 int main(int argc, char *argv[]) {
    char *file = 0;			// filename passwordfile
    char pass[MAXENCPWDLENGTH+1] = "";	// encrypted password

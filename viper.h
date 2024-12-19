@@ -1,3 +1,4 @@
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,12 +30,17 @@ struct crack_input
 	int  ci_vo;				// verbose output
 };
 	
-struct  crack_input lsf_out;
-struct  tm start_time, last_time;		// time structs
-char    checkpass[17];				// cleartext passphrase
-char    message[8][81];				// result message
-char    time_done[17];				// passed time
-char    time_togo[17];				// calculated time to run
-time_t  read_time;				// actual time
-FILE *  fp_pf;					// progressfile
-int     ret;                                    // function return codes
+extern struct  crack_input lsf_out;
+extern struct  tm start_time, last_time;		// time structs
+extern char    checkpass[17];				// cleartext passphrase
+extern char    message[8][81];				// result message
+extern char    time_done[17];				// passed time
+extern char    time_togo[17];				// calculated time to run
+extern time_t  read_time;				// actual time
+extern FILE *  fp_pf;					// progressfile
+extern int     ret;                                    // function return codes
+
+int help();
+int crack();
+int convert(double, char *);
+void the_res(struct crack_input, char *, struct tm);

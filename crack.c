@@ -1,6 +1,6 @@
 #include "viper.h"
 
-int crack (crack_input) {
+int crack () {
    int  count = 0;
    int  cps = 0;
    int  varlen = strlen(lsf_out.ci_cset);
